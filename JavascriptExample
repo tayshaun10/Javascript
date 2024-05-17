@@ -1,0 +1,33 @@
+let totalNFTs = 0;
+
+function mintNFT(name, description, rarity) {
+  let nft = {
+    name: name,
+    description: description,
+    rarity: rarity
+  };
+  totalNFTs++;
+  return nft;
+}
+
+function listNFTs(nftArray) {
+  nftArray.forEach(nft => {
+    console.log("Name: " + nft.name);
+    console.log("Description: " + nft.description);
+    console.log("Rarity: " + nft.rarity);
+    console.log("---");
+  });
+}
+
+function getTotalSupply() {
+  console.log("Total NFTs: " + totalNFTs);
+}
+
+let nft1 = mintNFT("Dragon", "A fiery dragon", "Rare");
+let nft2 = mintNFT("Unicorn", "A magical unicorn", "Legendary");
+let nft3 = mintNFT("Potion", "A mysterious potion", "Common");
+
+let myNFTs = [nft1, nft2, nft3];
+
+listNFTs(myNFTs);
+getTotalSupply();
